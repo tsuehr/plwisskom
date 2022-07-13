@@ -1,0 +1,23 @@
+{
+  "name": "plwisskom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsuehr/plwisskom.git"
+  },
+  "author": "Tom Sühr, Josef Pelz\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C L.Pelz\u001b[D\u001b[D\u001b[D\u001b[D Pelz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsuehr/plwisskom/issues"
+  },
+  "homepage": "https://github.com/tsuehr/plwisskom#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
