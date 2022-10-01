@@ -1,41 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Algorithmic Bias</title>
+<title>Grundlagen</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<script id="fxhash-snippet">
-      //---- do not edit the following code (you can indent as you wish)
-      let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
-      var fxhash = "oo" + Array(49).fill(0).map(_=>alphabet[(Math.random()*alphabet.length)|0]).join('')
-      let b58dec = str=>[...str].reduce((p,c)=>p*alphabet.length+alphabet.indexOf(c)|0, 0)
-      let fxhashTrunc = fxhash.slice(2)
-      let regex = new RegExp(".{" + ((fxhash.length/4)|0) + "}", 'g')
-      let hashes = fxhashTrunc.match(regex).map(h => b58dec(h))
-      let sfc32 = (a, b, c, d) => {
-        return () => {
-          a |= 0; b |= 0; c |= 0; d |= 0
-          var t = (a + b | 0) + d | 0
-          d = d + 1 | 0
-          a = b ^ b >>> 9
-          b = c + (c << 3) | 0
-          c = c << 21 | c >>> 11
-          c = c + t | 0
-          return (t >>> 0) / 4294967296
-        }
-      }
-      var fxrand = sfc32(...hashes)
-      // true if preview mode active, false otherwise
-      // you can append preview=1 to the URL to simulate preview active
-      var isFxpreview = new URLSearchParams(window.location.search).get('preview') === "1"
-      // call this method to trigger the preview
-      function fxpreview() {
-        console.log("fxhash: TRIGGER PREVIEW")
-      }
-      //---- /do not edit the following code
-    </script>
+
 
 <link rel="stylesheet" href="./style.css">
 
@@ -56,27 +27,44 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- Header -->
 <header class="w3-container w3-center w3-padding-32"> 
-  <h1><b>Gerechtigkeit von Algorithmen</b></h1>
-  <p>Wie Algorithmen Ungerechtigkeit erlernen und skalierbar machen. <br/>Ein Beitrag von <span class="w3-tag">Josef Pelz und Tom Sühr</span></p>
+  <h1><b>Grundlagen</b></h1>
 </header>
-
+<p><button onclick="window.location.href='index.html'" class="w3-button w3-padding-large w3-white w3-border"><b>Zurück zur Hauptseite »</b></button></p>
 <!-- Grid -->
 <div class="w3-card-4 w3-margin w3-white">
+
 <div class="w3-row">
   <!-- Blog entry -->
-  
-  
-  <img src="justice.jpeg" alt="Norway" style="width:100%">
   <div class="w3-card-4 w3-margin w3-white">
   <div class="w3-container">
-      <h3><b>Grundlagen</b></h3>
-      <h5>Algorithmus? Ungerechtigkeit? Diskrimminierung? Hier wirds erklärt!</h5>
+      <h3><b>Was ist ein Algorithmus?</b></h3>
     </div>
-	
     <div class="w3-container">
+	<p>Ein <i><a href="https://de.wikipedia.org/wiki/Algorithmus">Algorithmus</a></i> ist eine Handlungsvorschrift zur Lösung einer Aufgabe. Wir selbst interagieren täglich mit Algorithmen in digitaler oder analoger Form.
+	So hat jeder von uns einen Algorithmus zum Binden von Schnürsenkel gelernt und jeden Morgen machen viele von einem Algorithmus zur Bedienung der Kaffeemaschine gebrauch. Als Menschen denken wir kaum über 
+	die einzelnen Schritte die dafür nötig sind nach, könnten sie aber recht eindeutig aufschreiben. Dies könnte z.B. so aussehen:</p>
+	<ol>
+		<li>Wasser in Behälter einfüllen</li>
+		<li>Kaffeefilter einlegen</li>
+		<li>Kaffeepulver in den Filter löffeln</li>
+		<li>Maschine einschalten</li>
+		<li>Warten bis Wasserbehälter leer</li>
+		<li>Maschine ausschalten</li>
+		</ol>
+	<p>Unzählige Algorithmen existieren und können mit der Hilfe von Programmiersprachen sehr präzise aufgeschrieben werden und von Computern ausgeführt werden. Wenn wir also mit unserem Smartphone
+	die Route zu einem neuen Buchladen berechnen, kommt dabei ein <a href="https://de.wikipedia.org/wiki/K%C3%BCrzester_Pfad">Algorithmus zur Berechnung des kürzesten Weges zum Einsatz.</a></p>
+	<p>Für manche Aufgaben ist es jedoch extrem schwierig eine präzise Handlungsvorschrift zu formulieren. Zum Beispiel für folgendes:</p>
+	<p>Wir sind eine Kreditbank und gegeben sei das Vermögen und das Einkommen einer Person. Die Person möchte einen Kredit in Höhe von 50.000 € aufnehmen. Zu Lernzwecken verzichten wir hier auf einige Details wie z.B. unterschiedliche Zinssätze, Laufzeiten und so weiter.
+	<br><b><i>Ab welchem Einkommen und Vermögen bekommt die Person den Kredit? </i></b>
+	<br>
+	<br>Ohne weitere Informationen ist dieses Problem nicht gut Lösbar. Eine besondere Klasse von Algorithmen kommt bei der Lösung eines solchen Problems zum Einsatz: <a href="https://de.wikipedia.org/wiki/Maschinelles_Lernen">Maschinelles Lernen</a>.
+	<br>Genauer sprechen wir hier über ein Klassifikationsproblem. Die Handlungsvorschrift für dieses Problem ist relativ einfach:
+	<ol>
+	<li>Wenn <math>a*Einkommen + b*Vermögen > y</math></li>
+	</ol>
+	</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button onclick="window.location.href='grundlagen.html'" class="w3-button w3-padding-large w3-white w3-border"><b>Weiterlesen »</b></button></p>
         </div>
       </div>
     </div>
@@ -84,8 +72,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 	<hr>
 	<div class="w3-card-4 w3-margin w3-white">
     <div class="w3-container">
-      <h3><b>Wie kann ein Algorithmus Ungerechtigkeit erlernen?</b></h3>
-      <h5></h5>
+      <h3><b>Was ist ein ungerechter Algorithmus?</b></h3>
     </div>
 
     <div class="w3-container">
@@ -93,7 +80,6 @@ and is wrapped around the whole page content, except for the footer in this exam
         tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button onclick="window.location.href='adms.html'" class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
         </div>
       </div>
     </div>
@@ -102,66 +88,21 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-card-4 w3-margin w3-white">
   <!--img src="/w3images/bridge.jpg" alt="Norway" style="width:100%"-->
     <div class="w3-container">
-      <h3><b>Ist das Fair?</b></h3>
-      <h5>Wer entscheidet was die "richtige Lösung" ist?</h5>
+      <h3><b>Was ist der Unterschied zwischen Ungerechtigkeit und Diskrimminierung?</b></h3>
     </div>
-
     <div class="w3-container">
       <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
         tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
+        
       </div>
     </div>
   </div>
+          
 <!-- Blog entries -->
-<div class="w3-col l12 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <!--img src="" alt="Justice" style="width:100%"-->
-    <div class="w3-container">
-      <h3><b>Wie biased sind wir selbst (ohne es zu wollen)?</b></h3>
-      <h5>Versuche selbst die positiven (Kreise) von den negativen (Kreuze) mit hilfe einer geraden zu trennen.<br> Klicke anschließend auf <span class="w3-tag">Check</span> um zu sehen wie biased du warst.</h5>
-    </div>
-    <div id="canvasParent" class="w3-container">
-	  <canvas id="c"></canvas>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border" id="checkButton"><b>Check</b></button></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-
-  <!-- Blog entry -->
-  <!--div class="w3-card-4 w3-margin w3-white">
-  <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
-    <div class="w3-container">
-      <h3><b>BLOG ENTRY</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
-
 <!-- Introduction menu -->
 <div class="w3-col l4">
+
   <!-- About Card -->
   <!--div class="w3-card w3-margin w3-margin-top">
   <img src="/w3images/avatar_g.jpg" style="width:100%">
@@ -224,7 +165,9 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- END w3-content -->
 </div>
+<p><button onclick="window.location.href='index.html'" class="w3-button w3-padding-large w3-white w3-border"><b>Zurück zur Hauptseite »</b></button></p>
 </div>
+
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
   <!--button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button-->
