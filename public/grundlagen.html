@@ -58,10 +58,68 @@ and is wrapped around the whole page content, except for the footer in this exam
 	<br><b><i>Ab welchem Einkommen und Vermögen bekommt die Person den Kredit? </i></b>
 	<br>
 	<br>Ohne weitere Informationen ist dieses Problem nicht gut Lösbar. Eine besondere Klasse von Algorithmen kommt bei der Lösung eines solchen Problems zum Einsatz: <a href="https://de.wikipedia.org/wiki/Maschinelles_Lernen">Maschinelles Lernen</a>.
-	<br>Genauer sprechen wir hier über ein Klassifikationsproblem. Die Handlungsvorschrift für dieses Problem ist relativ einfach:
-	<ol>
-	<li>Wenn <math>a*Einkommen + b*Vermögen > y</math></li>
-	</ol>
+	<br>Im Kern ist das Ziel dieser Art von Algorithmen, eine Handlungsvorschrift aus gesammelten Daten zu "<i>lernen</i>". Stellen wir uns also vor, wir hätten 
+	aufgezeichnet welche Kombinationen aus Vermögen und Einkommen die Kredite in der Vergangenheit zurückgezahlt haben:
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-fymr">Einkommen</th>
+    <th class="tg-fymr">Vermögen</th>
+    <th class="tg-fymr">Zurückgezahlt?</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">1500 €</td>
+    <td class="tg-0pky">3500 €</td>
+    <td class="tg-0pky">Ja</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">2800 €</td>
+    <td class="tg-0pky">500 €</td>
+    <td class="tg-0pky">Nein</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">2300 €</td>
+    <td class="tg-0pky">2000 €</td>
+    <td class="tg-0pky">Ja</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">4000 €</td>
+    <td class="tg-0pky">0 €</td>
+    <td class="tg-0pky">Ja</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">1700 €</td>
+    <td class="tg-0lax">300 €</td>
+    <td class="tg-0lax">Nein</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">1200 €</td>
+    <td class="tg-0lax">250 €</td>
+    <td class="tg-0lax">Nein</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh" colspan="3">...</td>
+  </tr>
+</tbody>
+<img src="daten.png" alt="Norway" style="float: right;">
+</table>
+<br>
+Wenn wir diese Daten in ein Diagramm übertragen würden, sähe das ungefähr so aus wie hier rechts dargestellt. Die Kreise stehen für die Einkommens-Vemögens-Paare, die es geschafft haben, den Kredit zurückzuzahlen.
+Die Kreuze stehen für solche Paarungen, welche es nicht geschafft haben. Die eingezeichnete Linie könnte nun unsere Handlungsvorschrift oder <i>Entscheidungsgrenze</i> sein, ab der wir Entscheiden, ob wir den Kredit an eine Person vergeben oder nicht.
+Alle neuen Anfragen mit einem Einkommen und Vermögen oberhalb der Geraden würden von uns einen Kredit bekommen, alle anderen nicht. Wir können erkennen, dass diese Methode Fehler machen kann. So liegt ein Kreuz über der Geraden und ein Kreis unterhalb.
 	</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
