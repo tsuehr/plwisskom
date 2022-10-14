@@ -1,9 +1,3 @@
-body {
-  background-color: black;
-  margin: 0;
-  overflow: hidden;
-}
-
 #canvasParent{
 	display: block;
 }
@@ -11,24 +5,6 @@ body {
 canvas{
   margin-left: auto;
   margin-right: auto;
-  display: block;
   padding: 0px;
   border: 0px;
-}
-.buttonText{
-  color: white;
-  padding: 0px;
-}
-#checkButton{
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  background-color: black;
-  border-radius: 10px;
-  border-style: dotted;
-  border-color: white;
-  width: 100px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
 }
