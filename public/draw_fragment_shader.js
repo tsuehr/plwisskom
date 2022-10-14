@@ -25,19 +25,19 @@ void main() {
 
   vec2 n = normalize(line1-line0).yx*vec2(1.0,-1.0);
 
-  float site = step(dot(c-line0,n),0.0);
+  float side = step(dot(c-line0,n),0.0);
 
   float l = 0.0;
   vec2 uv = (p-c)*u_resolution.y/u_size;
-  if (type==0){
+  if (type==1){
     l = clamp(1.0-abs(length(uv)-0.5)/u_thickness,0.0,1.0);
   }
-  if (type==1){
+  if (type==0){
     l = clamp(1.0-(length(uv)-0.45)/u_thickness,0.0,1.0)*clamp(1.0-min(abs(dot(uv,normalize(vec2(1,1)))),abs(dot(uv,normalize(vec2(-1,1)))))/u_thickness,0.0,1.0);
   }
   col = mix(vec3(1.0),mix(vec3(1.0,0.9,0.1),vec3(0.3,0.9,1.0),color),u_colorized)*l;
-  if (float(type)!=site){
-    col += vec3(1.0,0.1,0.1)*clamp(1.0-abs(length(uv)-0.9)/u_thickness,0.0,1.0)*u_colorized;
+  if (float(type)!=side){
+    col += vec3(1.0,0.1,0.1)*clamp(1.0-abs(length(uv)-0.9)/u_thickness,0.0,1.0);
   }
 }
 `
