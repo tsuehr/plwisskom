@@ -140,13 +140,16 @@ and is wrapped around the whole page content, except for the footer in this exam
     <!--img src="" alt="Justice" style="width:100%"-->
     <div class="w3-container">
       <h3><b>Wie biased sind wir selbst (ohne es zu wollen)?</b></h3>
-      <h5>Versuche selbst die positiven (Kreise) von den negativen (Kreuze) mit hilfe einer geraden zu trennen.<br> Klicke anschließend auf <span class="w3-tag">Check</span> um zu sehen wie biased du warst.</h5>
+      <h5>Versuche selbst die positiven (Kreise) von den negativen (Kreuze) mit hilfe einer geraden zu trennen.<br> Klicke anschließend auf "Check" um zu sehen wie biased du warst.</h5>
     </div>
     <div id="canvasParent" class="w3-container">
 	  <canvas id="c"></canvas>
       <div class="w3-row">
-        <div class="w3-col m8 s12">
+        <div class="w3-col m3 s3">
           <p><button class="w3-button w3-padding-large w3-white w3-border" id="checkButton"><b>Check</b></button></p>
+        </div>
+      <div class="w3-col  w3-padding-large m9 s9">
+          <h5 id="results">Fehler:    </h5>
         </div>
       </div>
     </div>
