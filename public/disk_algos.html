@@ -6,8 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-
-
 <link rel="stylesheet" href="./style.css">
 
 <!-- if you need to import js scripts do it here -->
@@ -38,30 +36,93 @@ and is wrapped around the whole page content, except for the footer in this exam
   <div class="w3-card-4 w3-margin w3-white">
   <div class="w3-container">
       <h3><b>Die Berichte häufen sich.</b></h3>
-    </div>
     <div class="w3-container">
-	<p>Nachdem wir die <a href="./grundlagen.html">Grundlagen</a> besprochen haben, wollen wir uns in diesem Abschnitt einigen realen Beispielen von ungerechten oder diskrimminierenden Algorithmen widmen. </p>
+	<p>Nachdem wir die <a href="./grundlagen.html">Grundlagen</a> besprochen haben, wollen wir uns in diesem Abschnitt einigen realen Beispielen von ungerechten oder diskrimminierenden Algorithmen widmen. Wir haben für euch vier Artikel ausgesucht, die in der Wissenschaftscommunity heiß diskutiert wurden.
+	Diese Auswahl stellt keine erschöpfende Liste von Vorfällen dar und soll nicht den Anschein erwecken, dass einige Anwendungsbereiche besonders oder mehr betroffen sind als andere, auch wenn dies sein könnte. Das Ziel dieser Auswahl ist es ein Gefühl dafür zu vermitteln,
+	was alles passieren kann wenn man Algorithmen nicht auf ihre Fairness hin untersucht. Einen weiteren Aspekt den wir mit diesen Beispielen transportieren möchten, ist die Verantwortung die die Entwickler und Betreiber dieser Systeme tragen, weol diese Systeme immense Auswirkungen auf das Leben anderer haben können.</p>
 	<br>
+	<h5><b>COMPAS - Machine Bias</b> (2016)</h5>An <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">article by ProPublica</a> 
+	<p>Richter und Bewährungshelfer in den USA benutzen immer häufiger Algorithmen und einzuschätzen wie wahrscheinlich eine Person "rückfällig" wird, d.h. wieder eine Straftat begeht. Laut ProPublica existieren duzende solcher "risk assessment" Algorithmen, die entweder von den jeweiligen Bundesstaaten selbst, durch Forschende oder von kommerziellen Anbietern entwickelt wurden.
+	Die Journalisten von ProPublica haben sich einen dieser kommerziellen Algorithmen angeschaut: COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) von der Firma Northpointe, Inc. .
+	Das ProPublica Team sichtete mehr als 10.000 Angeklagte, die in Florida durch COMPAS auf einer Skala von 1 bis 10 bewertet wurden. Landet man im Bereich 1-4 so wird dies als "low risk (geringes Risiko)" eingeordnet. 5-7 gilt als "medium" und 8-10 als "high risk". Eine <a href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">detaillierte Analyse</a>
+	 ergab, folgendes:</p><style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-amwm" colspan="3">Alle Angeklagten</th>
+    <th class="tg-0lax"></th>
+    <th class="tg-1wig" colspan="2">Afro-Amerikanische Angeklagte</th>
+    <th class="tg-0lax"></th>
+    <th class="tg-1wig" colspan="2">Weiße Angeklagte</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-1wig">Low Risk</td>
+    <td class="tg-1wig">High Risk</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-1wig">Low Risk</td>
+    <td class="tg-1wig">High Risk</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-1wig">Low Risk</td>
+    <td class="tg-1wig">High Risk</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">Kein Rückfall</td>
+    <td class="tg-0lax">2681</td>
+    <td class="tg-0lax">1282</td>
+    <td class="tg-0lax">Kein Rückfall</td>
+    <td class="tg-0lax">990</td>
+    <td class="tg-0lax">805</td>
+    <td class="tg-0lax">Kein Rückfall</td>
+    <td class="tg-0lax">1139</td>
+    <td class="tg-0lax">349</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">Rückfall</td>
+    <td class="tg-0lax">1216</td>
+    <td class="tg-0lax">2035</td>
+    <td class="tg-0lax">Rückfall</td>
+    <td class="tg-0lax">532</td>
+    <td class="tg-0lax">1369</td>
+    <td class="tg-0lax">Rückfall</td>
+    <td class="tg-0lax">461</td>
+    <td class="tg-0lax">505</td>
+  </tr>
+</tbody>
+</table>
+<p>Die Tabelle zeigt die Kombinationen aus COMPAS-Rating und tatsächlichem Verhalten. Nimmt man alle Angeklagten zusammen, so scheint der Algorithmus relativ gute Arbeit zu leisten: Die meisten Angeklagten, welche als "low risk" bzw. "high risk" eingestuft wurden,
+haben später auch keinen Rückfall gehabt, bzw. haben erneut eine Straftat begangen.<br>Trennt man allerdings nun die Tablle in Afro-Amerikanische Angeklagte und weiße Angeklagte, so erhält man sehr unterschiedliche Fehlerraten. Von allen Afro-Amerikanischen Angeklagten die <b>keinen Rückfall</b> hatten (990 + 805 = 1795), wurden 44.85% (805) fälschlicherweise als "high risk" eingestuft. Weiße Angeklagte allerdings nur mit einer Rate von 23.45%. Die Quote der Afro-Amerikanischen Angeklagten die fälschlicherweise als "low risk" eingestuft wurden ist andererseits wesentlich kleiner, als die Fehlerquote mit der weiße Angeklagte als "low risk" eingestuft wurden (27.99% gegen 47.72%). <br>Mit anderen Worten, der Algorithmus hat Afro-Amerikanische Angeklagte wesentlich schlechter, diskrimminierend, eingestuft als weiße. </p>
 	<br>
-	<h5><b>COMPAS - Machine Bias</b> (2016)</h5>
-	<p>An <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">article by ProPublica</a> </p>
-	<br>
-	<br>
-	<h5><b>PredPool - To predict and serve?</b> (2016)</h5>
-	<p>A <a href="https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2016.00960.x">scientific article by Kristian Lum and William Isaac</a> </p>
+	<h5><b>Discrimination through Optimization - Facebook's Ad Delivery can Lead to Biased Outcomes</b> (2019)</h5>
+	<p>A <a href="https://dl.acm.org/doi/pdf/10.1145/3359301">scientific article by Ali et al.</a> </p>
+	<p>Jeder von uns hatte wahrscheinlich schon den Moment beim surfen im Internet: Warum sehe ich jetzt diesen Werbespot? Die Antwort ist oberflächlich sofort klar: Weil Google oder Facebook ausgerechnet haben, dass dieser Werbespot am besten zu dir passt.
+	Aber was heisst "am besten zu dir passt"? Wie funktionieren diese Systeme? Diese Frage stellten sich viele WissenschaftlerInnen und unter Anderem, Ali et al. .</p><p>In der Studie untersucht das Team aus den USA, wie sich die einzelnen Elemente einer Werbeanzeige (Überschrift, Text und Bild) auf die Zusammensetzung der Menschen auswirkt, denen die Werbung schließlich gezeigt wird. Desweiteren untersuchten sie, wie Facebook mit Stereotypen umgeht und ob es einen Unterschied bei "geschützten Gütern" (Arbeitsplätze und Wohnraum) gibt. Die Ergebnisse ihrer Analyse war besorgniserregend:
+	<ol><li>Das Bild der Werbeanzeige bestimmte hauptsächlich wem diese gezeigt wird. Änderte das Team ein Bild von einem Bodybuilder zu einem Kosmetikprodukt, so wurde die Werbeanzeige wesentlich mehr Frauen gezeigt. Sie konnten ausschließen, dass dies Aufgrund von Clicks passierte. Facebook hatte dies so gelernt.</li></ol></p>
 	<br>
 	<br>
 	<h5><b>Gender Shades</b> (2018)</h5>
 	<p>A <a href="http://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf">scientific article by Joy Buolamwini and Timnit Gebru</a> </p>
 	<br>
 	<br>
-	<h5><b>Discrimination through Optimization - Facebook's Ad Delivery can Lead to Biased Outcomes</b> (2019)</h5>
-	<p>A <a href="https://dl.acm.org/doi/pdf/10.1145/3359301">scientific article by Ali et al.</a> </p>
+	<!--h5><b>Discrimination through Optimization - Facebook's Ad Delivery can Lead to Biased Outcomes</b> (2019)</h5>
+	<p>A <a href="https://dl.acm.org/doi/pdf/10.1145/3359301">scientific article by Ali et al.</a> </p-->
       <div class="w3-row">
         <div class="w3-col m8 s12">
         </div>
       </div>
     </div>
+	</div>
 	</div>
 	<hr>
           
